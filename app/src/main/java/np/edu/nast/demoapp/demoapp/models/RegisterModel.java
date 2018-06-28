@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.models;
 
 public class RegisterModel {
     private String firstName;

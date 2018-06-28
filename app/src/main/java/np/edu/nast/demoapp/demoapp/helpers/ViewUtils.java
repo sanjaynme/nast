@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.helpers;
 
 import android.app.Activity;
 import android.content.Context;

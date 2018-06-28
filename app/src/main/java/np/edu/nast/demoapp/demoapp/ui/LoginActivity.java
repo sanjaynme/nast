@@ -1,14 +1,14 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,10 +16,25 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.util.List;
+
+import np.edu.nast.demoapp.demoapp.R;
+import np.edu.nast.demoapp.demoapp.data.ApiObject;
+import np.edu.nast.demoapp.demoapp.data.ApiService;
+import np.edu.nast.demoapp.demoapp.data.local.SharedPreferenceManager;
+import np.edu.nast.demoapp.demoapp.helpers.ViewUtils;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoginActivity extends AppCompatActivity {
     EditText etEmail;
+    String url;
     EditText etPassword;
     Button btnLogin;
+    ApiService apiService;
     SharedPreferenceManager sharedPreferenceManager;
     ImageButton btnShowHidePassword;
 
@@ -38,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferenceManager = new SharedPreferenceManager(this);
         ViewUtils.setupUI(findViewById(R.id.activity_login), this);
         btnShowHidePassword = findViewById(R.id.btn_show_hide_login_password);
-
         btnShowHidePassword.setImageResource(R.drawable.ic_eye);
         btnShowHidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,16 +66,27 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+        ApiService.getServiceClass().getAllPost().enqueue(new Callback<List<ApiObject>>() {
+            @Override
+            public void onResponse(Call<List<ApiObject>> call, Response<List<ApiObject>> response) {
+                if (response.isSuccessful()) {
+                    List<ApiObject> postList = response.body();
+                    Log.d("", "Returned count " + postList.size());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ApiObject>> call, Throwable t) {
+                Log.d("", "error loading from API");
+            }
+        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = etEmail.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                System.out.println("Email:::" + email + "Password:::" + password);
-//                Toast.makeText(LoginActivity.this, "Email:::" + email + "Password:::" + password, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Email:::" + email + "Password:::" + password, Toast.LENGTH_SHORT).show();
                 if (isValid(email, password)) {
-                    setName();
-                    getName();
                     startLoginActivity();
                 }
             }

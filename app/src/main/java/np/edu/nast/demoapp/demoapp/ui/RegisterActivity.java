@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import np.edu.nast.demoapp.demoapp.R;
+import np.edu.nast.demoapp.demoapp.models.RegisterModel;
+import np.edu.nast.demoapp.demoapp.adapter.SpinnerAdapter;
+import np.edu.nast.demoapp.demoapp.helpers.ViewUtils;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etFirstName;

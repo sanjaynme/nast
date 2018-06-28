@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import np.edu.nast.demoapp.demoapp.R;
 
 /**
  * Created by Sanjay on 03/04/2017.

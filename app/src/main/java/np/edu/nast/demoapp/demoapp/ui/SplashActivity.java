@@ -1,10 +1,11 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Space;
+
+import np.edu.nast.demoapp.demoapp.R;
 
 public class SplashActivity extends AppCompatActivity {
     Button btnRegister;

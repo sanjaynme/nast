@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp.local;
+package np.edu.nast.demoapp.demoapp.data.local;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
