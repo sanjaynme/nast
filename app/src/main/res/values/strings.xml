@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">DemoApp</string>
+    <string name="tv_login">Login</string>
+    <string name="button1">Button1</string>
+    <string name="button2">Button2</string>
+    <string name="sign_in">Sign In</string>
+    <string name="et_email">Email</string>
+    <string name="et_password">Password</string>
+    <string name="tv_forgot_your_password">Forgot your password?</string>
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_email_address">Email Address</string>
+    <string name="hint_sign_up_password">Password</string>
+    <string name="tv_subscribe_to_updates">Subscribe for updates.</string>
+    <string name="tv_terms_conditions">By registering, you are agreeing to the \n <u>Terms &amp; Conditions</u></string>
+    <string name="tv_register">Register</string>
+    <string name="err_email_empty">Please enter a email address.</string>
+    <string name="err_email_invalid">Please enter a valid email address.</string>
+    <string name="err_password_invalid">Password must be 8 characters long &amp; include a capital letter.</string>
+    <string name="err_password_capital">Password must include a capital letter.</string>
+    <string name="err_password">Please enter a password</string>
+    <string name="welcome">Welcome to my app</string>
+    <string name="hint_state">State</string>
+    <string name="hint_salary">Salary</string>
+</resources>
