@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferenceManager = new SharedPreferenceManager(this);
         ViewUtils.setupUI(findViewById(R.id.activity_login), this);
         btnShowHidePassword = findViewById(R.id.btn_show_hide_login_password);
+
         btnShowHidePassword.setImageResource(R.drawable.ic_eye);
         btnShowHidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
