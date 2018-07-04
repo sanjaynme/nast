@@ -19,6 +19,4 @@ public class ApiService {
         @GET("v2/5a96abc232000057005e2ed7")
         public Call<List<ApiObject>> getAllPost();
     }
-
-
 }

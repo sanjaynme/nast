@@ -22,4 +22,15 @@
     <string name="welcome">Welcome to my app</string>
     <string name="hint_state">State</string>
     <string name="hint_salary">Salary</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="view_data">View Data</string>
+    <string name="add_user">Add User</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="enter_user">Enter Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="current_name">Current Name</string>
+    <string name="new_name">New Name</string>
+    <string name="name_to_del">Enter Name to delete</string>
 </resources>

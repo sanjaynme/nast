@@ -66,20 +66,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        ApiService.getServiceClass().getAllPost().enqueue(new Callback<List<ApiObject>>() {
-            @Override
-            public void onResponse(Call<List<ApiObject>> call, Response<List<ApiObject>> response) {
-                if (response.isSuccessful()) {
-                    List<ApiObject> postList = response.body();
-                    Log.d("", "Returned count " + postList.size());
-                }
-            }
 
-            @Override
-            public void onFailure(Call<List<ApiObject>> call, Throwable t) {
-                Log.d("", "error loading from API");
-            }
-        });
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +79,9 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
 
     }
 

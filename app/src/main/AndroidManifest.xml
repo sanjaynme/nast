@@ -3,6 +3,7 @@
     package="np.edu.nast.demoapp.demoapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.RegisterActivity"/>
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".DatabaseExample"/>
     </application>
 
 </manifest>
