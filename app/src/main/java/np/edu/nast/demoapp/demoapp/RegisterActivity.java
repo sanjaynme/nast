@@ -28,6 +28,8 @@ public class RegisterActivity extends AppCompatActivity {
     Spinner spinnerChooseSalary;
     RegisterModel registerModel;
 
+    SharedPreferenceManager sharedPreferenceManager;
+
     public static void start(Context context) {
         Intent intent = new Intent(context, RegisterActivity.class);
         context.startActivity(intent);
@@ -49,7 +51,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         context = getApplicationContext();
         registerModel = new RegisterModel();
-
+        sharedPreferenceManager = new SharedPreferenceManager(this);
 
         btnShowHidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,9 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
         ArrayList<String> salaryTypes = new ArrayList<>(Arrays.asList("All salaries", "Annual", "Hourly"));
-        final SpinnerAdapter salaryAdapter = new SpinnerAdapter(context, R.layout.item_spinner, salaryTypes);
-        salaryAdapter.setDropDownViewResource(R.layout.item_spinner);
-        spinnerChooseSalary.setAdapter(salaryAdapter);
+//        final SpinnerAdapter salaryAdapter = new SpinnerAdapter(context, R.layout.item_spinner, salaryTypes);
+//        salaryAdapter.setDropDownViewResource(R.layout.item_spinner);
+//        spinnerChooseSalary.setAdapter(salaryAdapter);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +81,6 @@ public class RegisterActivity extends AppCompatActivity {
                 registerModel.setFirstName(firstName);
                 registerModel.setLastName(lastName);
                 registerModel.setEmail(email);
-
                 if (spinnerChooseSalary.getSelectedItemPosition() > 0) {
                     String selectedItem = spinnerChooseSalary.getSelectedItem().toString();
                     registerModel.setSalary(selectedItem);

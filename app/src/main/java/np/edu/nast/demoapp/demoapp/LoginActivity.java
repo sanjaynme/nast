@@ -3,7 +3,6 @@ package np.edu.nast.demoapp.demoapp;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etEmail;
@@ -29,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         btnLogin = findViewById(R.id.btn_login);
@@ -59,9 +57,11 @@ public class LoginActivity extends AppCompatActivity {
                 System.out.println("Email:::" + email + "Password:::" + password);
 //                Toast.makeText(LoginActivity.this, "Email:::" + email + "Password:::" + password, Toast.LENGTH_SHORT).show();
                 if (isValid(email, password)) {
-                    setName();
-                    getName();
-                    startLoginActivity();
+                    if (email.equalsIgnoreCase("sanjay@gmail.com") && password.equalsIgnoreCase("123456")) {
+                        sharedPreferenceManager.setKeyValues(AppContracts.Preferences.IS_LOGGED_IN, true);
+                        sharedPreferenceManager.setKeyValues(AppContracts.Preferences.EMAIL, email);
+                        startHomeActivity();
+                    }
                 }
             }
         });
@@ -80,8 +80,8 @@ public class LoginActivity extends AppCompatActivity {
         sharedPreferenceManager.setKeyValues("idName", 12);
     }
 
-    private void startLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
+    private void startHomeActivity() {
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 
