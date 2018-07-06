@@ -33,4 +33,11 @@
     <string name="current_name">Current Name</string>
     <string name="new_name">New Name</string>
     <string name="name_to_del">Enter Name to delete</string>
+    <string name="home">Home</string>
+    <string name="error_occured">Error Occurred</string>
+    <string name="search">Search</string>
+    <string name="save_lists">Saved Lists</string>
+    <string name="applications">Applications</string>
+    <string name="job_alerts">Job Alerts</string>
+    <string name="profile">Profile</string>
 </resources>

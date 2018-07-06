@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_lock"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/menu_saved_lists"
+        android:icon="@drawable/ic_user"
+        android:title="@string/save_lists" />
+
+    <item
+        android:id="@+id/menu_applications"
+        android:icon="@drawable/ic_lock"
+        android:title="@string/applications" />
+
+    <item
+        android:id="@+id/menu_job_alerts"
+        android:icon="@drawable/ic_user"
+        android:title="@string/job_alerts" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_lock"
+        android:title="@string/profile" />
+</menu>

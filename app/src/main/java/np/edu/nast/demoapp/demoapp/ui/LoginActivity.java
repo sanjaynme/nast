@@ -8,26 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import java.util.List;
-
+import np.edu.nast.demoapp.demoapp.DatabaseExample;
 import np.edu.nast.demoapp.demoapp.R;
-import np.edu.nast.demoapp.demoapp.data.ApiObject;
+import np.edu.nast.demoapp.demoapp.contracts.AppContract;
 import np.edu.nast.demoapp.demoapp.data.ApiService;
 import np.edu.nast.demoapp.demoapp.data.local.SharedPreferenceManager;
 import np.edu.nast.demoapp.demoapp.helpers.ViewUtils;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import np.edu.nast.demoapp.demoapp.home.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etEmail;
@@ -73,33 +66,32 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = etEmail.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                Toast.makeText(LoginActivity.this, "Email:::" + email + "Password:::" + password, Toast.LENGTH_SHORT).show();
                 if (isValid(email, password)) {
-                    startLoginActivity();
+                    if (email.equalsIgnoreCase("sanjay@gmail.com") && password.equalsIgnoreCase("sanjay123")) {
+                        sharedPreferenceManager.setKeyValues(AppContract.Preferences.IS_LOGGED_IN, true);
+                        sharedPreferenceManager.setKeyValues(AppContract.Preferences.EMAIL, email);
+//                        startHomeActivity();
+                        startDatabaseActivity();
+                    } else {
+                        showAlertDialog(R.string.error_occured);
+                    }
                 }
             }
         });
 
 
-
-
     }
 
-    private void getName() {
-        String name = sharedPreferenceManager.getStringValues("name");
-        int idName = sharedPreferenceManager.getIntValues("idName");
-        System.out.print("Sanjay is testing...." + name + "id name ......." + idName);
+    private void startHomeActivity() {
+        HomeActivity.start(LoginActivity.this);
+        finish();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
-
-    private void setName() {
-        sharedPreferenceManager.setKeyValues("name", "Sanjay");
-        sharedPreferenceManager.setKeyValues("idName", 12);
-    }
-
-    private void startLoginActivity() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+    private void startDatabaseActivity() {
+        DatabaseExample.start(LoginActivity.this);
+        finish();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     private boolean isValid(String username, String password) {
@@ -112,13 +104,13 @@ public class LoginActivity extends AppCompatActivity {
         } else if (password.isEmpty()) {
             showAlertDialog(R.string.err_password);
             return false;
-        } else if (password.length() < 8) {
+        } /*else if (password.length() < 8) {
             showAlertDialog(R.string.err_password_invalid);
             return false;
         } else if (password.equals(password.toLowerCase())) {
             showAlertDialog(R.string.err_password_capital);
             return false;
-        } else {
+        } */ else {
             return true;
         }
     }

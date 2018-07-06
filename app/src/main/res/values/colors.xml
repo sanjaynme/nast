@@ -12,5 +12,7 @@
     <color name="textColorPrimary">#434242</color>
     <color name="colorGrey300">#e0e0e0</color>
     <color name="colorWhiteTrans">#B3ffffff</color>
+    <color name="colorBottomNavigationView">#F0EAEA</color>
+    <color name="black">#000</color>
 
 </resources>
