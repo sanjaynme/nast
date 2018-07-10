@@ -23,5 +23,6 @@
     <dimen name="dimen_17dp">17dp</dimen>
     <dimen name="dimen_67dp">67dp</dimen>
     <dimen name="dimen_35sp">35sp</dimen>
+    <dimen name="txt_8sp">8sp</dimen>
 
 </resources>

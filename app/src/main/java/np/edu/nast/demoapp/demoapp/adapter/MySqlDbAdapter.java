@@ -1,4 +1,4 @@
-package np.edu.nast.demoapp.demoapp;
+package np.edu.nast.demoapp.demoapp.adapter;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,16 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class MyDbAdapter {
+public class MySqlDbAdapter {
     MySqlDbHelper sqlDbHelper;
 
-    public MyDbAdapter(Context context) {
+    public MySqlDbAdapter(Context context) {
         sqlDbHelper = new MySqlDbHelper(context);
     }
 
     public long insertData(String name, String password) {
         SQLiteDatabase db = sqlDbHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();//Creates an empty set of values using the default initial size
+
+        //Creates an empty set of values using the default initial size
+        ContentValues contentValues = new ContentValues();
         contentValues.put(MySqlDbHelper.NAME, name);
         contentValues.put(MySqlDbHelper.MY_PASSWORD, password);
         long id = db.insert(MySqlDbHelper.TABLE_NAME, null, contentValues);
@@ -62,9 +64,14 @@ public class MyDbAdapter {
         private static final String UID = "_id"; // Column I (Primary Key)
         private static final String NAME = "Name"; //Column II
         private static final String MY_PASSWORD = "Password";
+
+
+
         private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +
                 " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " VARCHAR(255) ," +
-                MY_PASSWORD + " VARCHAR(225));";
+                MY_PASSWORD + " VARCHAR(255));";
+
+
         private static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
         public MySqlDbHelper(Context context) {

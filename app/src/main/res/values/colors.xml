@@ -14,5 +14,6 @@
     <color name="colorWhiteTrans">#B3ffffff</color>
     <color name="colorBottomNavigationView">#F0EAEA</color>
     <color name="black">#000</color>
+    <color name="splash_color">#FF8539</color>
 
 </resources>

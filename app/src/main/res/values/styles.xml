@@ -69,6 +69,4 @@
         <item name="textAllCaps">false</item>
     </style>
 
-    <dimen name="txt_8sp">8sp</dimen>
-    <color name="splash_color">#FF8539</color>
 </resources>

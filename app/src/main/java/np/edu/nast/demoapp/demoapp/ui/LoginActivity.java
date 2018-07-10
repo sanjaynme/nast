@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import np.edu.nast.demoapp.demoapp.DatabaseExample;
 import np.edu.nast.demoapp.demoapp.R;
 import np.edu.nast.demoapp.demoapp.contracts.AppContract;
 import np.edu.nast.demoapp.demoapp.data.ApiService;
@@ -89,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startDatabaseActivity() {
-        DatabaseExample.start(LoginActivity.this);
+        DatabaseActivity.start(LoginActivity.this);
         finish();
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
@@ -129,4 +128,5 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
 }
