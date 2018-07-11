@@ -69,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (email.equalsIgnoreCase("sanjay@gmail.com") && password.equalsIgnoreCase("sanjay123")) {
                         sharedPreferenceManager.setKeyValues(AppContract.Preferences.IS_LOGGED_IN, true);
                         sharedPreferenceManager.setKeyValues(AppContract.Preferences.EMAIL, email);
-//                        startHomeActivity();
-                        startDatabaseActivity();
+                        startHomeActivity();
+//                        startDatabaseActivity();
                     } else {
                         showAlertDialog(R.string.error_occured);
                     }
