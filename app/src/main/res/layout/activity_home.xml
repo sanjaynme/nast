@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="First Fragment"
+        android:text="@string/first_fragment"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 
@@ -38,7 +38,7 @@
         android:layout_below="@+id/firstFragment"
         android:layout_marginTop="10dp"
         android:background="@color/colorAccent"
-        android:text="Second Fragment"
+        android:text="@string/second_fragment"
         android:textColor="@color/colorWhite"
         android:textSize="20sp" />
 

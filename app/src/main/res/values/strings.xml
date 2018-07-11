@@ -40,4 +40,8 @@
     <string name="applications">Applications</string>
     <string name="job_alerts">Job Alerts</string>
     <string name="profile">Profile</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="this_is_first_fragment">This is First Fragment</string>
+    <string name="this_is_second_fragment">This is Second Fragment</string>
 </resources>
